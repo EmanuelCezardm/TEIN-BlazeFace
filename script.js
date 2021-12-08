@@ -4,7 +4,7 @@ async function findFaces() {
   const predictions = await model.estimateFaces(img, false);
   const distanciaMinima = 200;
 
-  if (predictions.length > 0) {
+  if (predictions.length > 0) { 
 
     console.log(predictions);
     document.getElementById("status").innerText = "Rosto Encontrado!";
