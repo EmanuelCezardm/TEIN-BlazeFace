@@ -27,16 +27,13 @@ async function findFaces() {
 
       for (let j = i + 1; j < predictions.length; j++) {
         const boca2 = predictions[j].landmarks[3];
-
         const distancia = Math.abs(Math.sqrt(Math.pow(boca2[0] - boca1[0], 2) + Math.pow(boca2[1] - boca1[1], 2))).toFixed(2); // formula para calcular a distancia entre dois pontos.
 
         if (distancia < distanciaMinima) {
           console.log("ALERTA! " + pessoaDaFoto(i) + " está a " + distancia + " pixels de distância da(o) " + pessoaDaFoto(j) + ", distância menor do que 1.5 metros.");
           alert("ALERTA! " + pessoaDaFoto(i) + " está a " + distancia + " pixels de distância da(o) " + pessoaDaFoto(j) + ", distância menor do que 1.5 metros.");
         }
-
       }
-
     }
   } else {
     document.getElementById("status").innerText = "Nenhum rosto encontrado!";
